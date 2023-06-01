@@ -1,0 +1,171 @@
+## WEEK1_Introduction Data Structures and Algorithms & Intro to Python
+
+# Python: high level programming language
+# We can run a python program without ever compiling it. 
+# when we run the compiled program, that byte code is translated into your computer's machine language. 
+# Python Shell: The Python shell allows you to run python code without saving it to a file. 
+
+
+
+## Basic Python Syntax
+
+# Comment
+# this is a comment
+
+
+
+# Basic Types and Variables
+# Unlike C, it is better to think of variable in python as labels. 
+# we don't go around declaring sorage like we do in C. 
+
+# -Naming Rules
+#  letter, numbers and underscores in names
+#  variables names begin with letters and underscores, never numbers
+#  no spacing in variable names
+#  avoid python keywords for variable names
+# -Name conventions
+#  snake case_
+#  lower case for variable names
+#  ALLCAPS for constants
+#  capitalize first word of class name without using _ (ex. ThisIsAClassName )
+
+# Numbers
+# we don't specify the number of bits used to represent the numbers. 
+
+
+
+# Selection
+#  indentation really matters. there are no brackets. 
+#  if you want something to be part of an if block, they are indented the same way inside the if statement. 
+
+x=5;
+if(x == 3):
+	printf("bananas\n")
+	printf("oranges\n")
+
+
+
+
+# Boolean Expression
+
+#  Lazy Evaluation
+
+def truthy():
+	print("it's true!")
+	return True
+
+def falsey():
+	print("it's false!")
+	return False
+
+print ("true or false reulst: ")
+truthy() or falsey()
+
+print ("\nfalse or true result: ")
+falsey() or truthy()
+
+print("\ntrue and false result: ")
+truthy() and falsey()
+
+print("\nfalse and true result: ")
+falsey() and truthy()
+
+
+#  elif : "if the previous conditions were not true, then try this condition"
+# -- if elif else
+
+
+
+# Lists
+#  Unlike C++ arrays, when you declare a list, you do not specify a capacity. 
+#  Lists are used to store multiple items in a single variable
+#  As you add items, the list will grow as needed. 
+#  Items in python lists can be of different types. 
+
+my_list = [1, 2, "hello", "world", 1.5]
+print(my_list[3])
+
+
+
+
+# Dictionaries
+#  dictionary is a set of key-value pairs like JavaScript objects. 
+
+
+#my_dictionary = {<key1>:<value>, <key2>:<value>...}
+#print(my_dictionary["key1"]) 
+
+my_dictionary = {"key1": 5, "key2":6}
+my_dictionary["key3"] = 7
+print(my_dictionary["key3"]) # output 7
+
+
+
+# Iteration
+# for loop: The for loop does not require an indexing variable to set beforehand.
+#for variable in range(start, end):
+#......
+
+
+
+# Functions
+#def function_name(argument_list):
+#...
+
+
+
+# Classes
+#  there is a special function that is used to initialize and define the data within the class.
+#  the function is named init with two underscores before and after the word. 
+#  the keywork 'self' is the first argument followed by an argument list. 
+
+
+class Person:
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+
+	def say_hello(self):
+		print("hello, I'm {}".format(self.name))
+
+
+person1 = Person("Alice", 25)
+person1.say_hello()
+
+
+
+#  inherited class
+#  base class can take all attributes and methods from derived class
+
+class BaseClass:
+	def __init__(self, argument_list):
+		self.attribute1 =...
+		self.attribute2 =...
+	def function1(self, arguments):
+		...
+class DerivedClass(BaseClass):
+	def __init__(self, argument_list):
+		super().__init__(arguments_for_attribute1_and_attribute2)
+		self.attribute3 =...
+	def function1(self, arguments):
+	..... # override base class function
+	def function2(self, arguments):
+	....  # new function exclusive to defived class
+#------------------------------------------------------
+class ChildClass(ParentClass):
+
+class ParentClass:
+	def __init__(self, name):
+		self.name = name
+	def say_hello(self):
+		print("Hello, I'm {}".format(self.name))
+
+
+class ChildClass(ParentClass):
+	def say_hi(self):
+		print("hello!")
+
+person = ChildClass("Alice")
+person.say_hello()
+person.say_hi()
+
